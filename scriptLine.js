@@ -43,6 +43,23 @@ function CutRoute (place : int){
 	lineRouteY = tempArrayY;
 }
 
+function ReRoute () {
+	var rLength = lineRouteX.length;
+	var finalX : int = lineRouteX[rLength - 1];
+	var finalY : int = lineRouteY[rLength - 1];
+	
+	for (var i = 0; i < rLength - 3; i++) {
+		if ((lineRouteX[i] == finalX && (lineRouteY[i] == finalY - 1 || lineRouteY[i] == finalY + 1))
+		|| (lineRouteY[i] == finalY && (lineRouteX[i] == finalX - 1 || lineRouteX[i] == finalX + 1))) {
+			
+			CutRoute();
+			lineRouteX.Add (finalX);
+			lineRouteX.Add (finalY);
+			break;
+		}
+	}
+}
+
 function OnMouseUp () {
 	if (lineRouteX.length <= 1) {
 		Destroy(gameObject);
