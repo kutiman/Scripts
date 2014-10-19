@@ -5,6 +5,10 @@ function Start () {
 }
 
 function Update () {
+	
+}
+
+function RotatePlane () {
 	var m = Input.mousePosition;
 	var w = Screen.width;
 	var h = Screen.height;

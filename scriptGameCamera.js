@@ -6,7 +6,7 @@ function Start () {
 
 }
 
-function Update () {
+function SnapCamera () {
 	var gridLength : float = scriptGame.lvlGrid.GetLength(0);
 	var finalPos : float[];
 	if (counter > 120)
@@ -21,4 +21,8 @@ function Update () {
 		}
 	}
 	counter++;
+}
+
+function Update () {
+	
 }

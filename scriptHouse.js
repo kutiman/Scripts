@@ -25,8 +25,10 @@ colorsList = [
 
 gameObject.renderer.material.color = colorsList[color];
 
+
 function Start () {
 
+rigidbody.maxAngularVelocity = 10;
 gameObject.name = gameObject.GetInstanceID().ToString();
 gameObject.renderer.material.color = colorsList[3];
 
@@ -57,6 +59,7 @@ function AddToRoute (go : scriptLine) {
 	go.lineRouteY[go.lineRouteY.length] = objPos[1];
 	squareColored = true;
 	connectedLineID = scriptGame.activeLineID;
+	Spin();
 }
 
 function CanAddToRoute (go : scriptLine) {
@@ -86,13 +89,33 @@ function CanAddToRoute (go : scriptLine) {
 	return canAdd;
 }
 
-function OnMouseEnter() {
-
+function Jump () {
 	// jumping while on hover
 	var n = rigidbody.velocity.y;
 	if (n <= 0.3 && n >= -0.3) {
 		rigidbody.velocity.y = 3;
 	}
+}
+
+function Spin () {
+	var v : float = Random.Range(2,10);
+
+	rigidbody.angularVelocity = Vector3(0,v,0);
+}
+
+function Straighten () {
+	if (rigidbody.rotation.y % 90 >= 1.1){
+		rigidbody.rotation.y += 0.01;
+	}
+	else {
+		rigidbody.rotation.y = 0;
+	}
+}
+
+function OnMouseEnter() {
+
+	Jump();
+	
 	// Checking the status of the square for adding
 	if (scriptGame.activeLineID != "-1") {
 
@@ -231,6 +254,8 @@ function Update () {
 	gameObject.renderer.material.color = colorsList[color]; // color from the list
 	gameObject.renderer.material.color.a = opc;
 	//------- end of drawing square
+	
+	if (connectedLineID == "-1" && scriptGame.activeLineID == "-1") {
+		Straighten();
+	}
 }
-
-

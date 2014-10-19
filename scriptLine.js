@@ -27,6 +27,8 @@ function Update () {
 	else {
 		connected = false;
 	}
+	
+	ReRoute();
 }
 
 function CutRoute (place : int){
@@ -52,9 +54,9 @@ function ReRoute () {
 		if ((lineRouteX[i] == finalX && (lineRouteY[i] == finalY - 1 || lineRouteY[i] == finalY + 1))
 		|| (lineRouteY[i] == finalY && (lineRouteX[i] == finalX - 1 || lineRouteX[i] == finalX + 1))) {
 			
-			CutRoute();
+			CutRoute(i);
 			lineRouteX.Add (finalX);
-			lineRouteX.Add (finalY);
+			lineRouteY.Add (finalY);
 			break;
 		}
 	}
