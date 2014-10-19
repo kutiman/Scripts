@@ -28,6 +28,17 @@ function Start () {
 			lvlGrid[5,5] = 6;
 			break;
 		case 2:
+			CreateEmptyGrid(6);
+			lvlGrid[0,0] = 1;
+			lvlGrid[4,2] = 1;
+			lvlGrid[5,0] = 2;
+			lvlGrid[2,2] = 2;
+			lvlGrid[0,2] = 3;
+			lvlGrid[2,3] = 3;
+			lvlGrid[1,4] = 4;
+			lvlGrid[4,3] = 4;
+			break;
+		case 3:
 			CreateEmptyGrid(14);
 			lvlGrid[0,0] = 1;
 			lvlGrid[0,13] = 1;
@@ -45,6 +56,66 @@ function Start () {
 			lvlGrid[6,13] = 7;
 			lvlGrid[7,0] = 8;
 			lvlGrid[7,13] = 8;
+			break;
+		case 4:
+			CreateEmptyGrid(6);
+			lvlGrid[3,1] = 1;
+			lvlGrid[1,4] = 1;
+			lvlGrid[1,1] = 2;
+			lvlGrid[4,1] = 2;
+			lvlGrid[4,0] = 3;
+			lvlGrid[4,4] = 3;
+			lvlGrid[0,3] = 4;
+			lvlGrid[2,3] = 4;
+			lvlGrid[3,3] = 5;
+			lvlGrid[5,4] = 5;
+			break;
+		case 5:
+			CreateEmptyGrid(6);
+			lvlGrid[0,5] = 1;
+			lvlGrid[3,2] = 1;
+			lvlGrid[1,1] = 2;
+			lvlGrid[2,2] = 2;
+			lvlGrid[2,1] = 3;
+			lvlGrid[0,4] = 3;
+			break;
+			
+		case 6:
+			CreateEmptyGrid(8);
+			lvlGrid[0,7] = 1;
+			lvlGrid[3,4] = 1;
+			lvlGrid[5,1] = 2;
+			lvlGrid[0,6] = 2;
+			lvlGrid[0,0] = 3;
+			lvlGrid[3,0] = 3;
+			lvlGrid[4,0] = 4;
+			lvlGrid[1,2] = 4;
+			lvlGrid[7,0] = 5;
+			lvlGrid[2,4] = 5;
+			lvlGrid[4,5] = 6;
+			lvlGrid[6,6] = 6;
+			lvlGrid[3,5] = 7;
+			lvlGrid[5,4] = 7;
+			break;
+			
+		case 7:
+			CreateEmptyGrid(8);
+			lvlGrid[0,5] = 1;
+			lvlGrid[4,3] = 1;
+			lvlGrid[7,7] = 2;
+			lvlGrid[6,3] = 2;
+			lvlGrid[1,6] = 3;
+			lvlGrid[0,3] = 3;
+			lvlGrid[2,6] = 4;
+			lvlGrid[3,3] = 4;
+			lvlGrid[7,6] = 5;
+			lvlGrid[5,1] = 5;
+			lvlGrid[3,5] = 6;
+			lvlGrid[4,1] = 6;
+			lvlGrid[2,2] = 7;
+			lvlGrid[1,1] = 7;
+			lvlGrid[3,1] = 8;
+			lvlGrid[6,1] = 8;
 			break;
 	}
 	
