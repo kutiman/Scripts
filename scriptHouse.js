@@ -28,9 +28,11 @@ gameObject.renderer.material.color = colorsList[color];
 
 function Start () {
 
-rigidbody.maxAngularVelocity = 10;
 gameObject.name = gameObject.GetInstanceID().ToString();
 gameObject.renderer.material.color = colorsList[3];
+
+rigidbody.maxAngularVelocity = 10;
+Physics.sleepAngularVelocity = 0.0001;
 
 }
 
@@ -104,8 +106,12 @@ function Spin () {
 }
 
 function Straighten () {
-	if (rigidbody.rotation.y % 90 >= 1.1){
-		rigidbody.rotation.y += 0.01;
+
+	var rotY : float = rigidbody.rotation.y;
+	var speed = 0.05;
+	
+	if (rotY >= speed * 1.1){
+		rigidbody.rotation.y -= speed;
 	}
 	else {
 		rigidbody.rotation.y = 0;
