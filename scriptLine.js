@@ -1,6 +1,6 @@
 #pragma strict
 gameObject.name = gameObject.GetInstanceID().ToString();
-
+gameObject.tag = "Line";
 var lineRouteX = new Array();
 var lineRouteY = new Array();
 //Debug.Log("Line number " + gameObject.name + " at length of "+ lineRouteX.length.ToString() + " was created");
